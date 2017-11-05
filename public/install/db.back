@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS `<?=$db?>` ;
+USE `<?=$db?>`;
+CREATE TABLE IF NOT EXISTS `goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `type` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `min` int(11) NOT NULL,
+  `max` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+INSERT INTO `goods` (`id`, `name`, `type`, `weight`, `price`, `min`, `max`) VALUES
+	(1, 'Картон А', 1, 230, 45, 60, 30),
+	(2, 'Картон B', 0, 360, 82, 10, 200),
+	(3, 'Картон C', 1, 650, 64, 10, 300);
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `token` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx-token-token` (`token`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+INSERT INTO `tokens` (`id`, `token`) VALUES
+	(2, 'c7b18634aeb148f6fcb83cee09c370ad3928c1b00c8944d082ad517e512dab57');

@@ -1,0 +1,15 @@
+{
+	"require" : {
+		"php" : ">=5.5.9",
+		"gears/router": "*",
+		"illuminate/routing": "^5.2",
+		"illuminate/database": "^5.2",
+		"rakit/validation": "^0.13.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"app\\" : "app/",
+			"base\\" : "vendor/myapp/base"
+		}
+	}
+}

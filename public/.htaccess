@@ -1,0 +1,27 @@
+AddDefaultCharset utf-8
+Options +FollowSymLinks
+#php_flag display_errors off
+#php_flag display_startup_errors off
+#IndexIgnore */*
+#php_value upload_max_filesize 10M
+
+
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+</IfModule>
