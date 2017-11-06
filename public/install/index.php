@@ -59,7 +59,7 @@ EOF;
         }
 
         $success = true;
-        $f = new SplFileObject('.htaccess', 'w');
+       // $f = new SplFileObject('.htaccess', 'w');
     }catch(Exception $ex){
         $error = $ex->getMessage();
         unlink($app . 'app/config/db.php');
